@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>115 年大學二階甄試審查資料查詢系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; }
+        .requirement-card { transition: all 0.3s ease; }
+        .info-link { color: #2563eb; text-decoration: underline; font-weight: 500; }
+        .pdf-btn { display: inline-flex; align-items: center; padding: 0.5rem 1rem; background-color: #2563eb; color: white; border-radius: 0.5rem; font-weight: 500; text-decoration: none; }
+        .pdf-btn:hover { background-color: #1d4ed8; }
+        
+        .tab-btn { transition: all 0.2s; color: #64748b; border-bottom: 2px solid transparent; }
+        .tab-btn.active { color: #2563eb; border-color: #2563eb; background-color: #eff6ff; }
+
+        /* --- A4 單頁列印優化樣式 --- */
+        @media print {
+            header, .no-print, #placeholder, .tab-btn, .bg-slate-200\/50, .update-banner { display: none !important; }
+            body { background-color: white !important; padding: 0 !important; margin: 0 !important; font-size: 12px; }
+            #resultDisplay { display: block !important; width: 100%; }
+            .tab-content { display: block !important; opacity: 1 !important; margin-bottom: 15px; }
+            h2 { font-size: 16px !important; color: black !important; border-left: 3px solid #334155 !important; padding-left: 0.5rem; margin: 10px 0 !important; }
+            h3 { font-size: 14px !important; margin-bottom: 5px !important; }
+            .requirement-card { border: 1px solid #e2e8f0 !important; padding: 8px !important; margin-bottom: 8px !important; break-inside: avoid; box-shadow: none !important; background: white !important; }
+            .grid { display: block !important; }
+            .p-2 { padding: 4px !important; }
+            .mb-3, .mb-4, .mb-6, .mb-8, .mb-10 { margin-bottom: 4px !important; }
+            .space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px !important; }
+            .pdf-btn { background: none !important; color: black !important; border: 1px solid #ccc !important; font-size: 10px; }
+            @page { size: A4; margin: 1cm; }
+        }
+    </style>
+</head>
+<body class="pb-10 px-4 md:px-10">
+
+    <div class="update-banner no-print w-full bg-amber-100 border-b border-amber-200 py-3 mb-6">
+        <div class="max-w-5xl mx-auto px-4 flex items-center justify-center gap-2 text-amber-800 font-bold">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            115大學個申二階指定項目甄試資料已更新完畢，系統已恢復正常使用，資料以大學甄選入學委員會及各校系官網為準。
+        </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-10 text-center no-print">
+            <h1 class="text-3xl font-bold text-slate-800 mb-2">115 年大學二階甄試審查資料查詢系統</h1>
+            <p class="text-slate-500">資料來源：各校系網站、大學甄選入學委員會</p>
+        </header>
+<div class="no-print mb-8">
+            <h2 class="text-sm font-bold text-slate-500 mb-3 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                學習歷程撰寫範本參考(Yory優歷)
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                
+                <a href="https://www.yory.school/dashboard/learning-profiles/templates/620faae381c02700113a10e7" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
+                    <div class="flex flex-col">
+                        <span class="text-indigo-900 font-bold text-sm">學習歷程自述（歷程歸納法）</span>
+                        <span class="text-indigo-700 text-xs">需註冊或登入</span>
+                    </div>
+                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+
+                <a href="https://www.yory.school/dashboard/learning-profiles/templates/6360d0a3202457001259f4c5" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
+                    <div class="flex flex-col">
+                        <span class="text-indigo-900 font-bold text-sm">多元表現綜整心得</span>
+                        <span class="text-indigo-700 text-xs">需註冊或登入</span>
+                    </div>
+                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+
+                <a href="你的連結3" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
+                    <div class="flex flex-col">
+                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
+                        <span class="text-indigo-700 text-xs">系統更新中...</span>
+                    </div>
+                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+
+                <a href="你的連結4" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
+                    <div class="flex flex-col">
+                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
+                        <span class="text-indigo-700 text-xs">系統更新中...</span>
+                    </div>
+                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+
+                <a href="你的連結5" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
+                    <div class="flex flex-col">
+                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
+                        <span class="text-indigo-700 text-xs">系統更新中...</span>
+                    </div>
+                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+
+                <a href="你的連結6" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
+                    <div class="flex flex-col">
+                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
+                        <span class="text-indigo-700 text-xs">系統更新中...</span>
+                    </div>
+                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="no-print bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-4">
+            <div class="flex-1">
+                <label class="block text-sm font-medium text-slate-700 mb-2">1. 選擇大學</label>
+                <select id="universitySelect" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-blue-500">
+                    <option value="">-- 請選擇大學 --</option>
+                </select>
+            </div>
+            <div class="flex-1">
+                <label class="block text-sm font-medium text-slate-700 mb-2">2. 選擇科系</label>
+                <select id="departmentSelect" disabled class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-blue-500 disabled:opacity-50">
+                    <option value="">-- 請先選擇大學 --</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="resultDisplay" class="hidden">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-200 pb-4">
+                <h2 id="displayTitle" class="text-xl md:text-2xl font-bold text-blue-900"></h2>
+                <button onclick="window.print()" class="no-print flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    匯出完整資料
+                </button>
+            </div>
+
+            <div class="no-print flex gap-1 mb-8 bg-slate-200/50 p-1 rounded-xl">
+                <button onclick="switchTab('tab-info')" id="btn-info" class="tab-btn active flex-1 py-3 px-2 rounded-lg font-bold text-center">基本資料</button>
+                <button onclick="switchTab('tab-portfolio')" id="btn-portfolio" class="tab-btn flex-1 py-3 px-2 rounded-lg font-bold text-center">一、學習歷程</button>
+                <button onclick="switchTab('tab-interview')" id="btn-interview" class="tab-btn flex-1 py-3 px-2 rounded-lg font-bold text-center">二、面試資訊</button>
+                <button onclick="switchTab('tab-senior')" id="btn-senior" class="tab-btn flex-1 py-3 px-2 rounded-lg font-bold text-center">學長姐傳承</button>
+            </div>
+
+            <div id="tab-info" class="tab-content space-y-6">
+                <h2 class="hidden print:block text-xl font-bold border-l-4 border-slate-700 pl-3">【校系基本資料】</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-1">
+                        <h3 class="font-bold text-slate-800 mb-2 border-b pb-1">校系資訊</h3>
+                        <div id="info_basic" class="text-sm space-y-2 text-slate-600"></div>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-2">
+                        <h3 class="font-bold text-slate-800 mb-2 border-b pb-1">學系特色</h3>
+                        <div id="info_feature" class="text-sm text-slate-600 whitespace-pre-line"></div>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-3">
+                        <h3 class="font-bold text-slate-800 mb-2 border-b pb-1">畢業出路</h3>
+                        <div id="info_career" class="text-sm text-slate-600 whitespace-pre-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-portfolio" class="tab-content hidden space-y-10">
+                <h2 class="hidden print:block text-xl font-bold border-l-4 border-blue-500 pl-3">【一、學習歷程】</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">1. 修課紀錄</h3>
+                        <div class="text-sm text-slate-600" id="cat1"></div>
+                    </section>
+                    <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card">
+                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">2. 課程學習成果</h3>
+                        <div class="text-sm text-slate-600" id="cat2"></div>
+                    </section>
+                    <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-2">
+                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">3. 多元表現</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 text-sm text-slate-600" id="cat3"></div>
+                    </section>
+                    <section class="bg-blue-50 p-5 rounded-lg border border-blue-200 requirement-card md:col-span-2">
+                        <h3 class="font-bold text-lg text-blue-900 mb-4 border-b border-blue-200 pb-2">4. 學習歷程自述</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-700" id="cat4"></div>
+                    </section>
+                    <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-2">
+                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">5. 其他</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-600" id="cat5"></div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="tab-interview" class="tab-content hidden space-y-10">
+                <h2 class="hidden print:block text-xl font-bold border-l-4 border-emerald-500 pl-3">【二、面試資訊】</h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <section class="bg-emerald-50 p-5 rounded-lg border border-emerald-200 requirement-card">
+                        <h3 class="font-bold text-lg text-emerald-900 mb-4 border-b border-emerald-200 pb-2">面試詳情</h3>
+                        <div class="grid grid-cols-1 gap-4 text-sm text-slate-700">
+                            <div id="interview_date_display"></div>
+                            <div id="interview_guide_display"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div id="tab-senior" class="tab-content hidden space-y-6 no-print">
+                <h2 class="text-xl font-bold border-l-4 border-amber-500 pl-3 text-slate-800">【學長姐傳承專區】</h2>
+                <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 requirement-card">
+                    <h3 class="font-bold text-lg text-amber-900 mb-4 border-b border-amber-200 pb-2 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.827a1 1 0 00-1.388 0L2.73 9.14a1 1 0 000 1.414l6.276 6.313a1 1 0 001.388 0l6.276-6.313a1 1 0 000-1.414l-6.276-6.313z"></path></svg>
+                        優良學習歷程範本
+                    </h3>
+                    <div id="senior_links_display" class="grid grid-cols-1 gap-4 text-sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="placeholder" class="no-print py-20 text-center text-slate-400">
+            <svg class="mx-auto h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+            <p>請從上方選單選擇校系以查看資料</p>
+        </div>
+    </div>
+
+    <a href="https://forms.gle/cDURcQbLZDXh7tFS7" target="_blank" class="no-print fixed bottom-8 right-8 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-all hover:scale-110 group" title="上傳範本分享">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+        <span class="absolute right-16 bg-slate-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">上傳學長姐優秀歷程</span>
+    </a>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(tabId).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            const btnId = 'btn-' + tabId.split('-')[1];
+            document.getElementById(btnId).classList.add('active');
+        }
+
+        const universityData = {
+            "高雄醫學大學": {
+                departments: [{
+                    name: "醫務管理暨醫療資訊學系",
+                    code: "007152",
+                    website: "https://hami.kmu.edu.tw/index.php/zh-tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=007015",
+                    feature: "資通訊科技、AI、醫療機搆、企業管理三者間究竟擦出怎樣的火花，及現今人口老化，醫療需求增加，資源高度耗用的情況下如何面對？是本系所肩負的角色與責任，透過本系優秀師資，完善的設備與環境，和綿密的校友網絡，建構實務場域環境，強化產學合作並與國際接軌合作等特色，培養未來健康照護的尖兵，以符合社會的脈動與需要。",
+                    career: `醫學工程師
+將工程技術應用於生物學與醫學，保障臨床、醫療設備與材料的安全。調整醫療設備及基礎保養，提供設備採購評估及醫療儀器教育訓練、管理工作等。
+
+數據分析師
+從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。
+
+行政人員
+協助主管及專業人員處理一般行政業務工作。`,
+                    A: `語文領域、數學領域、自然科學領域、科技領域、綜合活動領域、學業總成績
+
+■撰寫指引
+1.本係屬醫藥衛生學群，參考部定必修、加深加廣選修、校定必修、多元選修等修課紀錄進行綜合評量。
+2.修課紀錄之準備：包括是否有修習與學系相關領域科目或課程，惟不強調修課數量。具體說明修習上述科目或課程動機、理由與心得(可於學習歷程中說明)。
+3.學業成績審查重點：學業總成績或數學科成績。`,
+                    B: `展現學生紙筆測驗之外的素養能力與學習態度。
+
+■撰寫指引
+1.課程學習成果準備指引：包括學習成果品質(重視歷程)，提供能展現於人際溝通、邏輯推理或程式能力課程等學習成果，重質不重量。`,
+                    C: ``,
+                    D: `展現學生紙筆測驗之外的素養能力與學習態度。
+
+■撰寫指引
+1.課程學習成果準備指引：包括學習成果品質(重視歷程)，提供能展現於人際溝通、邏輯推理或程式能力課程等學習成果，重質不重量。`,
+                    E: `展現學生紙筆測驗之外的素養能力與學習態度。
+
+■撰寫指引
+1.課程學習成果準備指引：包括學習成果品質(重視歷程)，提供能展現於人際溝通、邏輯推理或程式能力課程等學習成果，重質不重量。`,
+                    F: `■撰寫指引
+1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
+2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
+3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
+4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
+                    G: `■撰寫指引
+1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
+2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
+3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
+4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
+                    H: ``,
+                    I: `■撰寫指引
+1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
+2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
+3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
+4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
+                    J: ``,
+                    K: ``,
+                    L: ``,
+                    M: `■撰寫指引
+1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
+2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
+3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
+4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
+                    N: `■撰寫指引
+1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
+2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
+3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
+4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
+                    O: `■撰寫指引
+1.撰寫學習歷程自述(含 O、P、Q)500 字以內。
+2.具體說明「學習歷程自述」的動機與參與說明，並能契合學系教學目標及未來職涯規劃之關聯性。`,
+                    P: `■撰寫指引
+1.撰寫學習歷程自述(含 O、P、Q)500 字以內。
+2.具體說明「學習歷程自述」的動機與參與說明，並能契合學系教學目標及未來職涯規劃之關聯性。`,
+                    Q: `■撰寫指引
+1.撰寫學習歷程自述(含 O、P、Q)500 字以內。
+2.具體說明「學習歷程自述」的動機與參與說明，並能契合學系教學目標及未來職涯規劃之關聯性。`,
+                    R: `https://adaptive.kmu.edu.tw/wp-content/uploads/2026/02/115-007152%E9%86%AB%E5%8B%99%E7%AE%A1%E7%90%86%E6%9A%A8%E9%86%AB%E7%99%82%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%B3%BB007162%E9%86%AB%E7%AE%A1%E8%B3%87APCS%E7%B5%84.pdf`,
+                    S: ``,
+                    T: ``,
+                    interviewDate: `2026/5/22(五)~2026/5/23(六)`,
+                    interviewGuide: ``,
+                    seniorLinks: []
+                }]
+            },
+            "中國醫藥大學": {
+                departments: [{
+                    name: "醫療資訊學系",
+                    code: "012172",
+                    website: "https://dbmi.cmu.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=012018",
+                    feature: "中國醫藥大學醫療資訊學系特色為國內中部擁有醫療大健康的基礎師資與附設醫院醫學中心等級臨床資源的學系。本系師資結合了校內醫療資訊基礎教師、數位轉型辦公室與附醫大數據中心、醫療人工智慧中心等臨床主治醫師/教授/工程師。",
+                    career: `數據分析師
+從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。
+
+人工智慧工程師
+運用人工智慧等資訊技術輔助分析、優化、研發、製造等，協助企業解決問題，提出合理的決策方案或策略規劃。
+
+演算法開發工程師
+從事演算法的研究、分析、構建並設計或修改相關軟體等工作。
+
+數據工程師
+使用程式語言建構資料串流、處理非結構式資料儲存、串接、提取、介接其他大數據平台，並使用特定統計方式整理、呈現資料分布與屬性，甚至是大數據模型的建置 ，應用數據協助企業組織規劃、導入、管理、執行與追蹤經營方案。`,
+                    A: `■審查重點
+1. 高中(職)在校成績。
+2. 數學領域、自然科學領域或科技領域等課程成績。
+
+■準備指引
+考生若為當學年度各高級中等學校應屆畢業生，第一至第五學期修課紀錄由高中學習歷程資料庫提供，第六學期修課紀錄則由其就讀學校上傳至甄選委員會。`,
+                    B: ``,
+                    C: `■審查重點
+1. 實作作品之呈現
+2. 客觀之自我評價及參考依據
+
+■準備指引
+請提供參與課程之學習成果。`,
+                    D: `■審查重點
+1. 問題描述與分析
+2. 解決問題之方法
+3. 成果作品之呈現
+
+■準備指引
+自然科學領域探究與實作，或特殊類型班級之相關課程學習成果。`,
+                    E: ``,
+                    F: `■審查重點
+1. 內容陳述用心程度 
+2. 知識深度、廣度與反思
+
+■準備指引
+高中自主學習計畫與成果。`,
+                    G: `■審查重點
+1. 個人特質與領導能力 
+2. 組織與團體合作能力
+
+■準備指引
+校內外社團活動，包含校級有組織之團體經驗。`,
+                    H: ``,
+                    I: ``,
+                    J: `■審查重點
+1. 競賽表現之成績 
+2. 與生物醫療資訊、健康大數據或數理資訊領域的相關性
+
+■準備指引
+競賽表現傑出之具體事蹟(例如：獎狀、獎盃、錦旗、成績證明)。`,
+                    K: ``,
+                    L: ``,
+                    M: ``,
+                    N: `■審查重點
+1. 邏輯組織架構之能力
+2. 內容陳述用心程度
+3. 與本系宗旨相關性
+4. 個人特質
+
+■準備指引
+彙整高中自主學習計畫與成果之多元表現心得一份。`,
+                    O: ``,
+                    P: `■審查重點
+1. 文字表達能力 
+2. 與本系宗旨關聯性
+
+■準備指引
+詳述個人特質、學習經歷與學習動機之關連。`,
+                    Q: `■審查重點
+1. 計劃合理可執行 
+2. 與本系課程之關連 
+3. 對相關產業與社會動態之關注
+
+■準備指引
+短、中、長期學習計劃與生涯規劃。`,
+                    R: `https://adm21.cmu.edu.tw/sites/default/115/11517.pdf`,
+                    S: ``,
+                    T: ``,
+                    interviewDate: `2026/5/23(六)~2026/5/24(日)`,
+                    interviewGuide: ``,
+                    seniorLinks: []
+                }]
+            },
+            "國立中正大學": {
+                departments: [{
+                    name: "資訊管理學系",
+                    code: "041262",
+                    website: "https://mis.ccu.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=041026",
+                    feature: "本系之特色包含（1）具完整學制、（2）教師年輕有活力，積極從事研究工作、（3）致力於國際化、（4）強調研究與實務、（5）技術與管理平衡等；並以管理（Management）M、創新（Innovation）I及科技（Technology）T為核心，將中正資管發展成為全國資管學術研究及教學的標竿系所。",
+                    career: `資料庫管理人員
+從事設計、開發、控制、維護及安全管理等工作，以維護資料庫正常運行。
+
+系統維護／操作人員
+從事資訊系統、伺服器、網路系統、電子郵件、資料庫等維護工作，並協助解決產品使用之相關技術問題。
+
+軟體設計工程師
+從事設計、撰寫、測試各種軟體程式，並協助測試、修改、維護與保管程式之工作。`,
+                    A: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+■能力面向
+問題分析與自主學習能力
+
+■能力內涵
+問題分析與解決能力；應用各類資源提升自己的能力
+
+
+1.高中在校成績之語文領域、數學領域、科技領域，以及學業總平均成績。
+2.修習資訊科技、生活科技、其他資管相關課程或單元。`,
+                    B: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+■能力面向
+問題分析與自主學習能力
+
+■能力內涵
+問題分析與解決能力；應用各類資源提升自己的能力
+
+
+建議提供能展現自己在資管相關課程或單元之課程學習成果，並具體說明課程學習的過程與反思，請於高中學習歷程反思（O）中進行闡述。`,
+                    C: ``,
+                    D: ``,
+                    E: ``,
+                    F: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+■能力面向
+問題分析與自主學習能力
+
+■能力內涵
+問題分析與解決能力；應用各類資源提升自己的能力
+
+
+■能力面向
+團隊合作與領導能力
+
+■能力內涵
+團隊合作與溝通能力；運用個人專長，與他人合作完成專案計畫；並能與他人互動中，汲取正面有益的經驗。
+
+
+資訊相關議題之自主經驗、科技論文形式之成果等，並簡述學習經驗、收穫之綜整心得。`,
+                    G: ``,
+                    H: `■能力面向
+團隊合作與領導能力
+
+■能力內涵
+團隊合作與溝通能力；運用個人專長，與他人合作完成專案計畫；並能與他人互動中，汲取正面有益的經驗。
+
+
+有擔任學校活動幹部經驗或證明。`,
+                    I: ``,
+                    J: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+持有參加程式、數理、益智、資訊科技、英文等競賽活動證明。`,
+                    K: ``,
+                    L: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+取得程式設計、數學與英文相關檢定。`,
+                    M: ``,
+                    N: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+■能力面向
+問題分析與自主學習能力
+
+■能力內涵
+問題分析與解決能力；應用各類資源提升自己的能力
+
+
+■能力面向
+團隊合作與領導能力
+
+■能力內涵
+團隊合作與溝通能力；運用個人專長，與他人合作完成專案計畫；並能與他人互動中，汲取正面有益的經驗。`,
+                    O: `■能力面向
+專業素養與邏輯整合能力
+
+■能力內涵
+資訊管理相關基礎知識；科學或資訊實作能力。
+
+
+■能力面向
+問題分析與自主學習能力
+
+■能力內涵
+問題分析與解決能力；應用各類資源提升自己的能力
+
+
+■能力面向
+團隊合作與領導能力
+
+■能力內涵
+團隊合作與溝通能力；運用個人專長，與他人合作完成專案計畫；並能與他人互動中，汲取正面有益的經驗。
+
+
+1.請簡述成長過程、人格特質、及適合念資管系的原因，並說明相關學習歷程與資管系的關聯性（例如：資訊科技或生活科技或單元及活動，過程中所得到的學習經驗與省思）。
+2.具有閱讀資訊管理相關書籍的興趣與習慣，提出相關作品或見解。
+3.說明參加多元活動的動機、內容、時間，並具體舉證貢獻項目，以及清楚陳述感想收穫及自我的反思。
+4.提供數學、英文、程式設計能力檢定，或曾參與科學、數理、益智或資訊科技等競賽活動、科展證明佐證。`,
+                    P: `■能力面向
+自我探索能力
+
+■能力內涵
+對自我價值的瞭解程度；對申請就讀科系的瞭解程度；對自己職涯規畫的瞭解程度，訂定出培育自我能力之相對應具體學習計畫。
+
+
+請說明就讀本系的動機。`,
+                    Q: `■能力面向
+自我探索能力
+
+■能力內涵
+對自我價值的瞭解程度；對申請就讀科系的瞭解程度；對自己職涯規畫的瞭解程度，訂定出培育自我能力之相對應具體學習計畫。
+
+
+請說明對本系課程及大學學習規劃，以及中正資管系對自己未來生涯出路的具體計畫。`,
+                    R: `建議提供能展現自我特質、呈現自主學習積極性或對選讀本系有利之佐證資料。`,
+                    S: `https://ccuap.ccu.edu.tw/var/file/33/1033/img/333/B1-5-5.pdf`,
+                    T: `https://ccuap.ccu.edu.tw/var/file/33/1033/img/2150/B4-5-5.pdf`,
+                    interviewDate: `2026/5/15(五)`,
+                    interviewGuide: `https://ccuap.ccu.edu.tw/var/file/33/1033/img/2151/B5-5-5.pdf`,
+                    seniorLinks: [
+                        { title: "中正資訊管理學系_多元表現綜整心得", url: "https://drive.google.com/file/d/1UrKrt8WdkqXC6NXrazw3LEoSKwxF0df-/view?usp=sharing" },
+			{ title: "中正資訊管理學系_學習歷程自述", url: "https://drive.google.com/file/d/1VVeddnkdGBqnuf-sYHIGJ2J7Bkum3kpo/view?usp=sharing" }
+                    ]
+                }]
+            },
+            "國立彰化師範大學": {
+                departments: [{
+                    name: "資訊管理學系資訊管理組",
+                    code: "023202",
+                    website: "https://imweb.ncue.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=023018",
+                    feature: "本系成立於民國 89 年 8 月，是一個充滿朝氣與活力的學系，課程規劃以資訊管理為主，數位內容為特色，重點教研領域包括雲端運算、人工智慧、資料探勘、行動運算/商務、多媒體技術等，教育目標為培育資訊應用、網路技術及資料庫管理人才，以及培育具備數位內容第二專長之人才。每位專任教師均具有博士學位，學有專精且教學認真，研究成果豐碩，學生屢屢於全國性競賽中獲獎，系友遍佈於國內各大企業。",
+                    career: `MIS程式設計師
+規劃MIS系統運作之架構，決定系統引用之主要技術，確定系統之規格要求。設定系統發展條件、發展方式及分工協調原則，並撰寫系統設計使用說明規範、設計測試資料及驗收程式。
+
+系統分析師
+透過分析使用者需求，了解存在的問題以及需要執行的任務，負責定義使用介面、程式編碼、切割功能模組以及系統規劃與分析，然後根據公司或客戶的目標建立適合的資訊系統。
+
+軟體專案主管
+從事軟體工程的規劃、主導、協調與電腦系統、軟體相關之專案管理工作。
+
+電子商務技術主管
+負責商務流程電子化的規劃、設計、建議，與相關的資料處理、資訊系統、系統分析等事務，並管理部門日常活動。
+
+數據分析師
+從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。`,
+                    A: `從修課紀錄中了解申請者學習歷程的整體表現。
+
+■準備指引
+提供完整的修課紀錄。`,
+                    B: `■審查重點
+提供至多3件書面報告。
+
+■準備指引
+可勾選足以展現個人能力或是與本系專業有關的書面報告。`,
+                    C: ``,
+                    D: ``,
+                    E: ``,
+                    F: `■審查重點
+提供至多10件成果，並撰寫多元表現綜整心得。
+
+■準備指引
+根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
+1. 在這些活動中你所扮演的角色。
+2. 這些經歷帶給你的心得。`,
+                    G: ``,
+                    H: ``,
+                    I: ``,
+                    J: ``,
+                    K: ``,
+                    L: ``,
+                    M: `■審查重點
+提供至多10件成果，並撰寫多元表現綜整心得。
+
+■準備指引
+根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
+1. 在這些活動中你所扮演的角色。
+2. 這些經歷帶給你的心得。`,
+                    N: `■審查重點
+提供至多10件成果，並撰寫多元表現綜整心得。
+
+■準備指引
+根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
+1. 在這些活動中你所扮演的角色。
+2. 這些經歷帶給你的心得。`,
+                    O: ``,
+                    P: ``,
+                    Q: ``,
+                    R: `https://imweb.ncue.edu.tw/var/file/44/1044/img/1122/287778469.pdf`,
+                    S: ``,
+                    T: ``,
+                    interviewDate: `2026/5/23(六)`,
+                    interviewGuide: ``,
+                    seniorLinks: []
+                }]
+            },
+            "國立中山大學": {
+                departments: [{
+                    name: "企業管理學系",
+                    code: "027232",
+                    website: "https://bm.nsysu.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=027015",
+                    feature: `(1) 「全國最多」的國際交換計畫，致力於培養具備創新力、執行力和國際競爭力的商管人才。
+(2) 連續四次獲得「AACSB全球管理教育品質」的認證，蟬聯2019英國金融時報全球管理學碩士榜，全台唯一。
+(3) 課程理論與實務兼備，擁有多國籍的優良師資。
+(4) 多門英文專業課程，與國際交換生共同上課，與國際接軌。`,
+                    career: `經營管理主管
+1. 研擬公司營運計劃及年度專案規劃。
+2. 規劃公司各項管理制度與策劃可能的投資機會，以維持公司內在優勢與外在機會。
+
+財務主管
+1. 督導、審核各項財務會計作業。
+2. 提出各項財務、稅務、投資、融資決策之建議。
+3. 公司財務狀況測量、專案規劃。
+
+人力資源主管
+1. 計畫、主導並協調組織內人力資源管理活動，將人力資源策略運用發揮最大綜效。
+2. 確保員工召募任用、薪資獎酬、訓練發展、人事規章等功能之完備與合於法令規範。
+
+行銷企劃部門主管
+1. 研究當地或國家的一定區域的市場條件。
+2. 收集資訊，以確定潛在銷售產品或者服務。
+3. 創建行銷活動，收集競爭對手的資訊，摸索定價、銷售、市場推廣及分銷的方法。
+
+儲備幹部
+1. 輪調實習：儲備幹部會從基層工作開始，迅速了解組織的分工運作。
+2. 專案指派：強化跨域執行能力，累積實務經驗。會在輪調結束前製作結案報告，提出解決的執行方案或開發新的策略計畫。
+3. Mentor 制度：Mentor 會協助儲備幹部進行專案規劃指導，並提供相關經驗。`,
+                    A: `1. 語文領域
+2. 數學領域
+3. 社會領域
+4. 綜合活動領域
+
+
+■考生準備指引
+1. 綜合考量高中（職）在校成績證明，且各科目（含語文、數學、社會、綜合領域）均衡發展。
+2. 如有語言能力檢定，可提供相關資料佐證。`,
+                    B: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。`,
+                    C: ``,
+                    D: ``,
+                    E: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。`,
+                    F: ``,
+                    G: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。
+
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    H: ``,
+                    I: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。
+
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    J: ``,
+                    K: ``,
+                    L: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。
+
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    M: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。
+
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    N: `■考生準備指引
+1.「課程學習成果」請著重於語文、數學、社會、綜合活動、生涯規劃、商管選修課其中二至三個領域（上述科目或領域不用面面俱到）。亦可提供其他領域之高中校內課程學習成果（例如：生涯規劃課或校訂必修課或多元選修課可展現個人知識、能力、特質、興趣之報告，但不限於此）。
+提醒：
+(1)高中階段如果沒有選修商管相關課程或者沒有社會領域探究活動成果，也歡迎申請本系。
+(2)如果沒有社會領域探究活動成果，可用前述各領域課程之書面報告取代。
+
+2.「特殊優良表現證明」可提供項目參考：參加活動(如社會服務、文化交流等)、競賽表現、擔任幹部之經驗、自主學習計畫與成果，或其他有利申請者之資料。以上所列僅為範例，不用面面俱到。
+
+3.多元表現請各自呈現佐證，亦可呈現收穫與反思。
+
+4.建議用表格或條列式輔以適量文字呈現「多元表現綜整心得」，以交付本學程審查之多元表現作重點整理，具體說明個人基本能力、興趣與特質。
+
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    O: ``,
+                    P: `■考生準備指引
+1. 綜合考量高中（職）在校成績證明，且各科目（含語文、數學、社會、綜合領域）均衡發展。
+
+2. 如有語言能力檢定，可提供相關資料佐證。
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    Q: `■考生準備指引
+1. 綜合考量高中（職）在校成績證明，且各科目（含語文、數學、社會、綜合領域）均衡發展。
+
+2. 如有語言能力檢定，可提供相關資料佐證。
+
+
+■考生準備指引
+1. 可於「多元表現綜整心得」以實例說明解決問題的經驗。
+
+2. 請於一頁A4篇幅陳述就讀本系的動機，內容可結合修課紀錄、提交的課程學習成果與多元表現，將動機與以上成果、個人基本能力、興趣與特質連結。若您在課程學習過程中有解決問題的經驗並認為有助於進入本系後的學習，可於「就讀動機」說明。
+
+3. 請於「未來學習計畫與生涯規劃」以一頁A4篇幅說明您對於大一至大四畢業後的初步規劃，並就您認為有興趣的二至三項中山大學資源或制度說明初步了解的內容（或者對您可能的影響），舉例如下（但不限於）：(1)本系課程、(2)本校整合學程、微學程、(3)交換學生、(4)五學年學碩士學位、(5)鼓勵大學部學生參與專題研究計畫、(6)管院職涯發展辦公室、(7)英語自學園English Plaza；以上所列僅為範例，不用面面俱到。本校相關網站上的文字可參考，但請勿照抄。
+
+4. 建議用表格或條列式輔以適量文字呈現「就讀動機」、「未來學習計畫與生涯規劃」，以期清楚明瞭。`,
+                    R: `https://rpa35.nsysu.edu.tw/static/file/78/1078/img/4776/663553204.pdf`,
+                    S: ``,
+                    T: ``,
+                    interviewDate: `無面試`,
+                    interviewGuide: `無面試`,
+                    seniorLinks: []
+                }]
+            },
+            "國立中興大學": {
+                departments: [{
+                    name: "智慧創意工程學士學位學程",
+                    code: "003242",
+                    website: "https://upice.nchu.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=003050",
+                    feature: "智慧創意工程學士學位學程設立於 110 學年度, 為呼應政府前瞻計畫推動｢人工智慧｣產業應用之重點,並因應中部為我國智慧機械與光電製造重鎮之發展,整合院內系所專長,規劃｢智慧材料｣、｢智慧製造｣與｢智慧城鄉｣三大專業領域之學習課程，培養新世代具備整合人工智慧與工程技術之智慧創意人才。",
+                    career: `數據分析師
+從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。
+
+數據工程師
+使用程式語言建構資料串流、處理非結構式資料儲存、串接、提取、介接其他大數據平台，並使用特定統計方式整理、呈現資料分布與屬性，甚至是大數據模型的建置 ，應用數據協助企業組織規劃、導入、管理、執行與追蹤經營方案。
+
+人工智慧工程師
+運用人工智慧等資訊技術輔助分析、優化、研發、製造等，協助企業解決問題，提出合理的決策方案或策略規劃。`,
+                    A: `主要依據學業成績平均及表現評分。（另得依修課記錄及各科成績穩定或進步、學習的均衡發展、學習態度等綜合評估）。`,
+                    B: `⚫ 附上個人作品之佐證資料。
+⚫ 提供實作成果作品（個人或團體作品均可）。
+⚫ 可提供高中課程的小論文作品。
+亦可提供就學期間優良作業，作為審查資料。`,
+                    C: `⚫ 附上個人作品之佐證資料。
+⚫ 提供實作成果作品（個人或團體作品均可）。
+⚫ 可提供高中課程的小論文作品。
+亦可提供就學期間優良作業，作為審查資料。`,
+                    D: `⚫ 附上個人作品之佐證資料。
+⚫ 提供實作成果作品（個人或團體作品均可）。
+⚫ 可提供高中課程的小論文作品。
+亦可提供就學期間優良作業，作為審查資料。`,
+                    E: ``,
+                    F: `⚫ 重視邏輯思維與多元表現能力，且著重與本學程的關聯。
+⚫ 請提供參與數理、自然科學、科技領域之活動成果、競賽、特殊優良表現，或是能證明擁有邏輯思維與多元表現能力的佐證資料。
+⚫ 提供其他有利審查資料。
+⚫ 多元表現綜整心得
+(1) 在各項活動中，陳述努力過程、提出領導能力等具體事蹟。
+(2) 在各項活動中，得到什麼樣的收穫與反思？
+以上書面審查資料僅提供參考，並非每一項均為必要項目。`,
+                    G: ``,
+                    H: ``,
+                    I: ``,
+                    J: `⚫ 重視邏輯思維與多元表現能力，且著重與本學程的關聯。
+⚫ 請提供參與數理、自然科學、科技領域之活動成果、競賽、特殊優良表現，或是能證明擁有邏輯思維與多元表現能力的佐證資料。
+⚫ 提供其他有利審查資料。
+⚫ 多元表現綜整心得
+(1) 在各項活動中，陳述努力過程、提出領導能力等具體事蹟。
+(2) 在各項活動中，得到什麼樣的收穫與反思？
+以上書面審查資料僅提供參考，並非每一項均為必要項目。`,
+                    K: `⚫ 重視邏輯思維與多元表現能力，且著重與本學程的關聯。
+⚫ 請提供參與數理、自然科學、科技領域之活動成果、競賽、特殊優良表現，或是能證明擁有邏輯思維與多元表現能力的佐證資料。
+⚫ 提供其他有利審查資料。
+⚫ 多元表現綜整心得
+(1) 在各項活動中，陳述努力過程、提出領導能力等具體事蹟。
+(2) 在各項活動中，得到什麼樣的收穫與反思？
+以上書面審查資料僅提供參考，並非每一項均為必要項目。`,
+                    L: ``,
+                    M: `⚫ 重視邏輯思維與多元表現能力，且著重與本學程的關聯。
+⚫ 請提供參與數理、自然科學、科技領域之活動成果、競賽、特殊優良表現，或是能證明擁有邏輯思維與多元表現能力的佐證資料。
+⚫ 提供其他有利審查資料。
+⚫ 多元表現綜整心得
+(1) 在各項活動中，陳述努力過程、提出領導能力等具體事蹟。
+(2) 在各項活動中，得到什麼樣的收穫與反思？
+以上書面審查資料僅提供參考，並非每一項均為必要項目。`,
+                    N: `⚫ 重視邏輯思維與多元表現能力，且著重與本學程的關聯。
+⚫ 請提供參與數理、自然科學、科技領域之活動成果、競賽、特殊優良表現，或是能證明擁有邏輯思維與多元表現能力的佐證資料。
+⚫ 提供其他有利審查資料。
+⚫ 多元表現綜整心得
+(1) 在各項活動中，陳述努力過程、提出領導能力等具體事蹟。
+(2) 在各項活動中，得到什麼樣的收穫與反思？
+以上書面審查資料僅提供參考，並非每一項均為必要項目。`,
+                    O: `高中學習歷程反思
+⚫ 請說明你最有興趣的科目及原因。
+⚫ 試論述你的學習歷程及心得，以及與本學系的關聯。`,
+                    P: `申請本學程的就讀動機，以及進入本學程後你的期待與渴望？`,
+                    Q: `⚫ 未來在大學四年裡你希望實現的事為何？為什麼？你預計要如何實現？
+⚫ 大學四年中你想利用何種方式增進自己在學程專業領域的學習效果？（如閱讀、學術研討、參與競賽、寒暑假進修、實習等具體可行之方法。）
+大學四年中自己除了專注在專業知識學習外，你認為自己應該額外加強的部份有哪些？說明具體的作為？`,
+                    R: `■選才理念
+本學程為跨領域整合之新增綜合性科系，課程之設計與方向涵括人工智慧、創意實作、程式設計、跨領域學習，並提供與社會責任連結之產業實習，並與工程相關產業密切配合。專業課程領域分為：智慧製造、智慧城鄉、智慧材料三大類，學生可依興趣及欲解決之問題屬性，擇一或二領域自由組合，以利專業技能之培養。本學程結合本校工程、資訊及管理三大體系，期望培育具有創意能力之學生，將人工智慧技術應用於工程領域，以解決智慧製造、智慧城鄉、智慧材料相關之現存或未來問題。依據本學程之選才理念，將尺規構面分為「基礎學科能
+力」、「邏輯思維與多元表現能力」、「自我學習與問題解決能力」等三個面向。`,
+                    S: `https://upice.nchu.edu.tw/uploads/files/20260225134230_699e8bc64a4ad.pdf`,
+                    T: ``,
+                    interviewDate: `2026/5/15(五)`,
+                    interviewGuide: ``,
+                    seniorLinks: []
+                }]
+            }
+        };
+
+        const uniSelect = document.getElementById('universitySelect');
+        const deptSelect = document.getElementById('departmentSelect');
+        const resultDisplay = document.getElementById('resultDisplay');
+        const placeholder = document.getElementById('placeholder');
+        const displayTitle = document.getElementById('displayTitle');
+
+        Object.keys(universityData).forEach(uni => {
+            const opt = document.createElement('option');
+            opt.value = uni; opt.textContent = uni;
+            uniSelect.appendChild(opt);
+        });
+
+        uniSelect.addEventListener('change', () => {
+            const uniName = uniSelect.value;
+            deptSelect.innerHTML = '<option value="">-- 請選擇科系 --</option>';
+            if (uniName) {
+                deptSelect.disabled = false;
+                universityData[uniName].departments.forEach(dept => {
+                    const opt = document.createElement('option');
+                    opt.value = dept.name; opt.textContent = dept.name;
+                    deptSelect.appendChild(opt);
+                });
+            } else {
+                deptSelect.disabled = true;
+                resultDisplay.classList.add('hidden');
+                placeholder.classList.remove('hidden');
+            }
+        });
+
+        deptSelect.addEventListener('change', () => {
+            const uniName = uniSelect.value;
+            const deptName = deptSelect.value;
+            if (uniName && deptName) {
+                const data = universityData[uniName].departments.find(d => d.name === deptName);
+                renderData(uniName, data);
+            }
+        });
+
+        function renderData(uni, data) {
+            placeholder.classList.add('hidden');
+            resultDisplay.classList.remove('hidden');
+            displayTitle.textContent = `${uni} - ${data.name}`;
+            switchTab('tab-info');
+
+            document.getElementById('info_basic').innerHTML = `
+                <p><strong>校系代碼：</strong>${data.code || '---'}</p>
+                <p><strong>學系官網：</strong>${data.website ? `<a href="${data.website}" target="_blank" class="info-link">點此前往</a>` : '---'}</p>
+                <p><strong>Collego：</strong>${data.collego ? `<a href="${data.collego}" target="_blank" class="info-link">查看介紹</a>` : '---'}</p>
+            `;
+            document.getElementById('info_feature').textContent = data.feature || '暫無資料';
+            document.getElementById('info_career').textContent = data.career || '暫無資料';
+
+const formatItem = (label, value) => {
+                let content = value || '<span class="text-slate-300 text-xs italic">未特別要求 / 待填寫</span>';
+                
+                // 自動偵測：如果內容是以 http 開頭的網址
+                const isUrl = value && value.trim().startsWith('http');
+
+                if (isUrl) {
+                    content = `
+                    <a href="${value.trim()}" target="_blank" class="pdf-btn shadow-sm hover:shadow-md transition-all">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                        點此開啟連結 / 檔案
+                    </a>`;
+                }
+
+                return `
+                <div class="flex flex-col mb-3">
+                    <span class="font-bold text-slate-700">${label}</span>
+                    <div class="p-2 bg-slate-50 border-l-4 border-slate-300 min-h-[1.5rem] ${isUrl ? '' : 'whitespace-pre-line'} text-slate-600">${content}</div>
+                </div>`;
+            };
+
+            document.getElementById('cat1').innerHTML = formatItem('A. 修課紀錄', data.A);
+            document.getElementById('cat2').innerHTML = formatItem('B. 書面報告', data.B) + formatItem('C. 實作作品', data.C) + formatItem('D.自然科學領域探究與實作成果', data.D) + formatItem('E.社會領域探究活動成果', data.E);
+            document.getElementById('cat3').innerHTML = formatItem('F. 高中自主學習計畫', data.F) + formatItem('G. 社團活動', data.G) + formatItem('H. 擔任幹部經驗', data.H) + formatItem('I. 服務學習經驗', data.I) + formatItem('J. 競賽表現', data.J) + formatItem('K. 非修課紀錄之成果作品', data.K) + formatItem('L. 檢定證照', data.L) + formatItem('M. 特殊優良表現證明', data.M) + formatItem('N. 多元表現綜整心得', data.N);
+            document.getElementById('cat4').innerHTML = formatItem('O. 學習歷程反思', data.O) + formatItem('P. 就讀動機', data.P) + formatItem('Q. 未來規劃', data.Q);
+            document.getElementById('cat5').innerHTML = formatItem('R. 其他', data.R) + formatItem('S. 其他', data.S) + formatItem('T. 其他', data.T);
+            document.getElementById('interview_date_display').innerHTML = formatItem('面試日期', data.interviewDate);
+            document.getElementById('interview_guide_display').innerHTML = formatItem('面試準備指引', data.interviewGuide, true);
+
+            const seniorDisplay = document.getElementById('senior_links_display');
+            if (data.seniorLinks && data.seniorLinks.length > 0) {
+                seniorDisplay.innerHTML = data.seniorLinks.map(link => `
+                    <a href="${link.url}" target="_blank" class="flex items-center justify-between p-3 bg-white border border-amber-100 rounded-lg hover:shadow-md transition text-slate-700">
+                        <span class="font-medium">${link.title}</span>
+                        <span class="text-blue-600 flex items-center gap-1">點此查看 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></span>
+                    </a>
+                `).join('');
+            } else {
+                seniorDisplay.innerHTML = '<p class="text-amber-600 italic">目前尚無學長姐分享資料，歡迎點擊右下角按鈕提供！</p>';
+            }
+        }
+    </script>
+</body>
+</html>
