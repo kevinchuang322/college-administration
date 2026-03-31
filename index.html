@@ -18,28 +18,28 @@
 
         /* --- A4 單頁列印優化樣式 --- */
         @media print {
-            header, .no-print, #placeholder, .tab-btn, .bg-slate-200\/50, .update-banner { display: none !important; }
-            body { background-color: white !important; padding: 0 !important; margin: 0 !important; font-size: 12px; }
+            header, .no-print, #placeholder, .tab-btn, .bg-slate-200\/50, .update-banner, .floating-btn { display: none !important; }
+            body { background-color: white !important; padding: 0 !important; margin: 0 !important; font-size: 11px; }
             #resultDisplay { display: block !important; width: 100%; }
-            .tab-content { display: block !important; opacity: 1 !important; margin-bottom: 15px; }
-            h2 { font-size: 16px !important; color: black !important; border-left: 3px solid #334155 !important; padding-left: 0.5rem; margin: 10px 0 !important; }
-            h3 { font-size: 14px !important; margin-bottom: 5px !important; }
-            .requirement-card { border: 1px solid #e2e8f0 !important; padding: 8px !important; margin-bottom: 8px !important; break-inside: avoid; box-shadow: none !important; background: white !important; }
+            .tab-content { display: block !important; opacity: 1 !important; margin-bottom: 10px; }
+            h2 { font-size: 14px !important; color: black !important; border-left: 3px solid #334155 !important; padding-left: 0.5rem; margin: 8px 0 !important; }
+            h3 { font-size: 12px !important; margin-bottom: 3px !important; }
+            .requirement-card { border: 1px solid #e2e8f0 !important; padding: 6px !important; margin-bottom: 6px !important; break-inside: avoid; box-shadow: none !important; background: white !important; }
             .grid { display: block !important; }
-            .p-2 { padding: 4px !important; }
+            .p-2, .p-5, .p-6 { padding: 4px !important; }
             .mb-3, .mb-4, .mb-6, .mb-8, .mb-10 { margin-bottom: 4px !important; }
-            .space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 10px !important; }
-            .pdf-btn { background: none !important; color: black !important; border: 1px solid #ccc !important; font-size: 10px; }
+            .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 6px !important; }
+            .space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 8px !important; }
             @page { size: A4; margin: 1cm; }
         }
     </style>
 </head>
 <body class="pb-10 px-4 md:px-10">
 
-    <div class="update-banner no-print w-full bg-amber-100 border-b border-amber-200 py-3 mb-6">
+    <div class="update-banner no-print w-full bg-amber-100 border-b border-amber-200 py-3 mb-6 text-center">
         <div class="max-w-5xl mx-auto px-4 flex items-center justify-center gap-2 text-amber-800 font-bold">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            115大學個申二階指定項目甄試資料已更新完畢，系統已恢復正常使用，資料以大學甄選入學委員會及各校系官網為準。
+            【115資料系統更新中...】 第一階段公告結果已匯入
         </div>
     </div>
 
@@ -48,63 +48,6 @@
             <h1 class="text-3xl font-bold text-slate-800 mb-2">115 年大學二階甄試審查資料查詢系統</h1>
             <p class="text-slate-500">資料來源：各校系網站、大學甄選入學委員會</p>
         </header>
-<div class="no-print mb-8">
-            <h2 class="text-sm font-bold text-slate-500 mb-3 flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                學習歷程撰寫範本參考(Yory優歷)
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                
-                <a href="https://www.yory.school/dashboard/learning-profiles/templates/620faae381c02700113a10e7" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
-                    <div class="flex flex-col">
-                        <span class="text-indigo-900 font-bold text-sm">學習歷程自述（歷程歸納法）</span>
-                        <span class="text-indigo-700 text-xs">需註冊或登入</span>
-                    </div>
-                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </a>
-
-                <a href="https://www.yory.school/dashboard/learning-profiles/templates/6360d0a3202457001259f4c5" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
-                    <div class="flex flex-col">
-                        <span class="text-indigo-900 font-bold text-sm">多元表現綜整心得</span>
-                        <span class="text-indigo-700 text-xs">需註冊或登入</span>
-                    </div>
-                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </a>
-
-                <a href="你的連結3" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
-                    <div class="flex flex-col">
-                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
-                        <span class="text-indigo-700 text-xs">系統更新中...</span>
-                    </div>
-                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </a>
-
-                <a href="你的連結4" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
-                    <div class="flex flex-col">
-                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
-                        <span class="text-indigo-700 text-xs">系統更新中...</span>
-                    </div>
-                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </a>
-
-                <a href="你的連結5" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
-                    <div class="flex flex-col">
-                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
-                        <span class="text-indigo-700 text-xs">系統更新中...</span>
-                    </div>
-                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </a>
-
-                <a href="你的連結6" target="_blank" class="flex items-center justify-between p-3 bg-indigo-50 border border-indigo-100 rounded-lg hover:bg-indigo-100 transition group">
-                    <div class="flex flex-col">
-                        <span class="text-indigo-900 font-bold text-sm">系統更新中...</span>
-                        <span class="text-indigo-700 text-xs">系統更新中...</span>
-                    </div>
-                    <svg class="w-5 h-5 text-indigo-400 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                </a>
-
-            </div>
-        </div>
 
         <div class="no-print bg-white p-6 rounded-xl shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-4">
             <div class="flex-1">
@@ -123,10 +66,13 @@
 
         <div id="resultDisplay" class="hidden">
             <div class="flex items-center justify-between mb-6 border-b border-slate-200 pb-4">
-                <h2 id="displayTitle" class="text-xl md:text-2xl font-bold text-blue-900"></h2>
+                <div class="flex flex-col">
+                    <h2 id="displayTitle" class="text-xl md:text-2xl font-bold text-blue-900"></h2>
+                    <div id="statusBadge" class="mt-1 font-bold text-sm"></div>
+                </div>
                 <button onclick="window.print()" class="no-print flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                    匯出完整資料
+                    匯出完整資料 (A4)
                 </button>
             </div>
 
@@ -134,11 +80,21 @@
                 <button onclick="switchTab('tab-info')" id="btn-info" class="tab-btn active flex-1 py-3 px-2 rounded-lg font-bold text-center">基本資料</button>
                 <button onclick="switchTab('tab-portfolio')" id="btn-portfolio" class="tab-btn flex-1 py-3 px-2 rounded-lg font-bold text-center">一、學習歷程</button>
                 <button onclick="switchTab('tab-interview')" id="btn-interview" class="tab-btn flex-1 py-3 px-2 rounded-lg font-bold text-center">二、面試資訊</button>
-                <button onclick="switchTab('tab-senior')" id="btn-senior" class="tab-btn flex-1 py-3 px-2 rounded-lg font-bold text-center">學長姐傳承</button>
             </div>
 
             <div id="tab-info" class="tab-content space-y-6">
                 <h2 class="hidden print:block text-xl font-bold border-l-4 border-slate-700 pl-3">【校系基本資料】</h2>
+                
+                <div id="scheduleSection" class="hidden grid grid-cols-1 gap-6">
+                    <div class="bg-blue-50 p-5 rounded-lg border-2 border-blue-200 requirement-card">
+                        <h3 class="font-bold text-blue-900 mb-3 border-b border-blue-200 pb-1 flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            二階重要日程與資料
+                        </h3>
+                        <div id="schedule_content" class="text-sm grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700"></div>
+                    </div>
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-1">
                         <h3 class="font-bold text-slate-800 mb-2 border-b pb-1">校系資訊</h3>
@@ -155,35 +111,35 @@
                 </div>
             </div>
 
-            <div id="tab-portfolio" class="tab-content hidden space-y-10">
+            <div id="tab-portfolio" class="tab-content hidden space-y-6">
                 <h2 class="hidden print:block text-xl font-bold border-l-4 border-blue-500 pl-3">【一、學習歷程】</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card">
-                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">1. 修課紀錄</h3>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 border-b pb-1">1. 修課紀錄</h3>
                         <div class="text-sm text-slate-600" id="cat1"></div>
                     </section>
                     <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card">
-                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">2. 課程學習成果</h3>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 border-b pb-1">2. 課程學習成果</h3>
                         <div class="text-sm text-slate-600" id="cat2"></div>
                     </section>
                     <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-2">
-                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">3. 多元表現</h3>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 border-b pb-1">3. 多元表現</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 text-sm text-slate-600" id="cat3"></div>
                     </section>
                     <section class="bg-blue-50 p-5 rounded-lg border border-blue-200 requirement-card md:col-span-2">
-                        <h3 class="font-bold text-lg text-blue-900 mb-4 border-b border-blue-200 pb-2">4. 學習歷程自述</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-700" id="cat4"></div>
+                        <h3 class="font-bold text-lg text-blue-900 mb-2 border-b border-blue-200 pb-1">4. 學習歷程自述</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-700" id="cat4"></div>
                     </section>
                     <section class="bg-white p-5 rounded-lg border border-slate-200 requirement-card md:col-span-2">
-                        <h3 class="font-bold text-lg text-slate-800 mb-4 border-b pb-2">5. 其他</h3>
+                        <h3 class="font-bold text-lg text-slate-800 mb-2 border-b pb-1">5. 其他</h3>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-600" id="cat5"></div>
                     </section>
                 </div>
             </div>
 
-            <div id="tab-interview" class="tab-content hidden space-y-10">
+            <div id="tab-interview" class="tab-content hidden space-y-6">
                 <h2 class="hidden print:block text-xl font-bold border-l-4 border-emerald-500 pl-3">【二、面試資訊】</h2>
-                <div class="grid grid-cols-1 gap-6">
+                <div class="grid grid-cols-1 gap-4">
                     <section class="bg-emerald-50 p-5 rounded-lg border border-emerald-200 requirement-card">
                         <h3 class="font-bold text-lg text-emerald-900 mb-4 border-b border-emerald-200 pb-2">面試詳情</h3>
                         <div class="grid grid-cols-1 gap-4 text-sm text-slate-700">
@@ -193,18 +149,6 @@
                     </section>
                 </div>
             </div>
-
-            <div id="tab-senior" class="tab-content hidden space-y-6 no-print">
-                <h2 class="text-xl font-bold border-l-4 border-amber-500 pl-3 text-slate-800">【學長姐傳承專區】</h2>
-                <div class="bg-amber-50 p-6 rounded-lg border border-amber-200 requirement-card">
-                    <h3 class="font-bold text-lg text-amber-900 mb-4 border-b border-amber-200 pb-2 flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.827a1 1 0 00-1.388 0L2.73 9.14a1 1 0 000 1.414l6.276 6.313a1 1 0 001.388 0l6.276-6.313a1 1 0 000-1.414l-6.276-6.313z"></path></svg>
-                        優良學習歷程範本
-                    </h3>
-                    <div id="senior_links_display" class="grid grid-cols-1 gap-4 text-sm">
-                    </div>
-                </div>
-            </div>
         </div>
         
         <div id="placeholder" class="no-print py-20 text-center text-slate-400">
@@ -212,11 +156,6 @@
             <p>請從上方選單選擇校系以查看資料</p>
         </div>
     </div>
-
-    <a href="https://forms.gle/cDURcQbLZDXh7tFS7" target="_blank" class="no-print fixed bottom-8 right-8 bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition-all hover:scale-110 group" title="上傳範本分享">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-        <span class="absolute right-16 bg-slate-800 text-white px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity">上傳學長姐優秀歷程</span>
-    </a>
 
     <script>
         function switchTab(tabId) {
@@ -228,182 +167,19 @@
         }
 
         const universityData = {
-            "高雄醫學大學": {
-                departments: [{
-                    name: "醫務管理暨醫療資訊學系",
-                    code: "007152",
-                    website: "https://hami.kmu.edu.tw/index.php/zh-tw/",
-                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=007015",
-                    feature: "資通訊科技、AI、醫療機搆、企業管理三者間究竟擦出怎樣的火花，及現今人口老化，醫療需求增加，資源高度耗用的情況下如何面對？是本系所肩負的角色與責任，透過本系優秀師資，完善的設備與環境，和綿密的校友網絡，建構實務場域環境，強化產學合作並與國際接軌合作等特色，培養未來健康照護的尖兵，以符合社會的脈動與需要。",
-                    career: `醫學工程師
-將工程技術應用於生物學與醫學，保障臨床、醫療設備與材料的安全。調整醫療設備及基礎保養，提供設備採購評估及醫療儀器教育訓練、管理工作等。
-
-數據分析師
-從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。
-
-行政人員
-協助主管及專業人員處理一般行政業務工作。`,
-                    A: `語文領域、數學領域、自然科學領域、科技領域、綜合活動領域、學業總成績
-
-■撰寫指引
-1.本係屬醫藥衛生學群，參考部定必修、加深加廣選修、校定必修、多元選修等修課紀錄進行綜合評量。
-2.修課紀錄之準備：包括是否有修習與學系相關領域科目或課程，惟不強調修課數量。具體說明修習上述科目或課程動機、理由與心得(可於學習歷程中說明)。
-3.學業成績審查重點：學業總成績或數學科成績。`,
-                    B: `展現學生紙筆測驗之外的素養能力與學習態度。
-
-■撰寫指引
-1.課程學習成果準備指引：包括學習成果品質(重視歷程)，提供能展現於人際溝通、邏輯推理或程式能力課程等學習成果，重質不重量。`,
-                    C: ``,
-                    D: `展現學生紙筆測驗之外的素養能力與學習態度。
-
-■撰寫指引
-1.課程學習成果準備指引：包括學習成果品質(重視歷程)，提供能展現於人際溝通、邏輯推理或程式能力課程等學習成果，重質不重量。`,
-                    E: `展現學生紙筆測驗之外的素養能力與學習態度。
-
-■撰寫指引
-1.課程學習成果準備指引：包括學習成果品質(重視歷程)，提供能展現於人際溝通、邏輯推理或程式能力課程等學習成果，重質不重量。`,
-                    F: `■撰寫指引
-1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
-2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
-3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
-4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
-                    G: `■撰寫指引
-1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
-2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
-3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
-4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
-                    H: ``,
-                    I: `■撰寫指引
-1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
-2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
-3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
-4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
-                    J: ``,
-                    K: ``,
-                    L: ``,
-                    M: `■撰寫指引
-1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
-2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
-3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
-4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
-                    N: `■撰寫指引
-1.撰寫Ｎ.多元表現綜整心得至多 800 字，圖片至多3 張。
-2.請描述「請於Ｎ.多元表現綜整心得描述Ｆ.高中自主學習計與成果」與本學系重點領域的關聯性。
-3.提供參與Ｇ.社團活動、Ｉ.服務學習的經驗以及Ｍ.特殊優良表現的佐證資料，並於Ｎ.多元表現綜整心得說明參與過程與電腦能力的契合度。
-4.多元表現準備指引：高中自主學習計畫與成果，著重於自主學習歷程。社團活動與服務學習經驗，著重於啟發與心得。特殊優良表現，如校內班際、校際或是法人辦理競賽或活動等，結果僅是參考，主要是在過程中的學習歷程與反思。`,
-                    O: `■撰寫指引
-1.撰寫學習歷程自述(含 O、P、Q)500 字以內。
-2.具體說明「學習歷程自述」的動機與參與說明，並能契合學系教學目標及未來職涯規劃之關聯性。`,
-                    P: `■撰寫指引
-1.撰寫學習歷程自述(含 O、P、Q)500 字以內。
-2.具體說明「學習歷程自述」的動機與參與說明，並能契合學系教學目標及未來職涯規劃之關聯性。`,
-                    Q: `■撰寫指引
-1.撰寫學習歷程自述(含 O、P、Q)500 字以內。
-2.具體說明「學習歷程自述」的動機與參與說明，並能契合學系教學目標及未來職涯規劃之關聯性。`,
-                    R: `https://adaptive.kmu.edu.tw/wp-content/uploads/2026/02/115-007152%E9%86%AB%E5%8B%99%E7%AE%A1%E7%90%86%E6%9A%A8%E9%86%AB%E7%99%82%E8%B3%87%E8%A8%8A%E5%AD%B8%E7%B3%BB007162%E9%86%AB%E7%AE%A1%E8%B3%87APCS%E7%B5%84.pdf`,
-                    S: ``,
-                    T: ``,
-                    interviewDate: `2026/5/22(五)~2026/5/23(六)`,
-                    interviewGuide: ``,
-                    seniorLinks: []
-                }]
-            },
-            "中國醫藥大學": {
-                departments: [{
-                    name: "醫療資訊學系",
-                    code: "012172",
-                    website: "https://dbmi.cmu.edu.tw/",
-                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=012018",
-                    feature: "中國醫藥大學醫療資訊學系特色為國內中部擁有醫療大健康的基礎師資與附設醫院醫學中心等級臨床資源的學系。本系師資結合了校內醫療資訊基礎教師、數位轉型辦公室與附醫大數據中心、醫療人工智慧中心等臨床主治醫師/教授/工程師。",
-                    career: `數據分析師
-從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。
-
-人工智慧工程師
-運用人工智慧等資訊技術輔助分析、優化、研發、製造等，協助企業解決問題，提出合理的決策方案或策略規劃。
-
-演算法開發工程師
-從事演算法的研究、分析、構建並設計或修改相關軟體等工作。
-
-數據工程師
-使用程式語言建構資料串流、處理非結構式資料儲存、串接、提取、介接其他大數據平台，並使用特定統計方式整理、呈現資料分布與屬性，甚至是大數據模型的建置 ，應用數據協助企業組織規劃、導入、管理、執行與追蹤經營方案。`,
-                    A: `■審查重點
-1. 高中(職)在校成績。
-2. 數學領域、自然科學領域或科技領域等課程成績。
-
-■準備指引
-考生若為當學年度各高級中等學校應屆畢業生，第一至第五學期修課紀錄由高中學習歷程資料庫提供，第六學期修課紀錄則由其就讀學校上傳至甄選委員會。`,
-                    B: ``,
-                    C: `■審查重點
-1. 實作作品之呈現
-2. 客觀之自我評價及參考依據
-
-■準備指引
-請提供參與課程之學習成果。`,
-                    D: `■審查重點
-1. 問題描述與分析
-2. 解決問題之方法
-3. 成果作品之呈現
-
-■準備指引
-自然科學領域探究與實作，或特殊類型班級之相關課程學習成果。`,
-                    E: ``,
-                    F: `■審查重點
-1. 內容陳述用心程度 
-2. 知識深度、廣度與反思
-
-■準備指引
-高中自主學習計畫與成果。`,
-                    G: `■審查重點
-1. 個人特質與領導能力 
-2. 組織與團體合作能力
-
-■準備指引
-校內外社團活動，包含校級有組織之團體經驗。`,
-                    H: ``,
-                    I: ``,
-                    J: `■審查重點
-1. 競賽表現之成績 
-2. 與生物醫療資訊、健康大數據或數理資訊領域的相關性
-
-■準備指引
-競賽表現傑出之具體事蹟(例如：獎狀、獎盃、錦旗、成績證明)。`,
-                    K: ``,
-                    L: ``,
-                    M: ``,
-                    N: `■審查重點
-1. 邏輯組織架構之能力
-2. 內容陳述用心程度
-3. 與本系宗旨相關性
-4. 個人特質
-
-■準備指引
-彙整高中自主學習計畫與成果之多元表現心得一份。`,
-                    O: ``,
-                    P: `■審查重點
-1. 文字表達能力 
-2. 與本系宗旨關聯性
-
-■準備指引
-詳述個人特質、學習經歷與學習動機之關連。`,
-                    Q: `■審查重點
-1. 計劃合理可執行 
-2. 與本系課程之關連 
-3. 對相關產業與社會動態之關注
-
-■準備指引
-短、中、長期學習計劃與生涯規劃。`,
-                    R: `https://adm21.cmu.edu.tw/sites/default/115/11517.pdf`,
-                    S: ``,
-                    T: ``,
-                    interviewDate: `2026/5/23(六)~2026/5/24(日)`,
-                    interviewGuide: ``,
-                    seniorLinks: []
-                }]
-            },
             "國立中正大學": {
                 departments: [{
                     name: "資訊管理學系",
                     code: "041262",
+                    status: "passed",
+                    schedule: {
+                        date: "2026-05-15",
+                        location: "管理學院",
+                        payment: "04/21上午09:00～05/04下午05:00",
+                        docs: "4/30～5/4",
+                        fee: "1200元",
+                        note: "*需於學習歷程第一頁附上申請入學個人資料表\n*通過第一階段篩選者，本校不另行寄發指定項目甄試通知"
+                    },
                     website: "https://mis.ccu.edu.tw/",
                     collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=041026",
                     feature: "本系之特色包含（1）具完整學制、（2）教師年輕有活力，積極從事研究工作、（3）致力於國際化、（4）強調研究與實務、（5）技術與管理平衡等；並以管理（Management）M、創新（Innovation）I及科技（Technology）T為核心，將中正資管發展成為全國資管學術研究及教學的標竿系所。",
@@ -570,73 +346,103 @@
                     ]
                 }]
             },
-            "國立彰化師範大學": {
+            "中國醫藥大學": {
                 departments: [{
-                    name: "資訊管理學系資訊管理組",
-                    code: "023202",
-                    website: "https://imweb.ncue.edu.tw/",
-                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=023018",
-                    feature: "本系成立於民國 89 年 8 月，是一個充滿朝氣與活力的學系，課程規劃以資訊管理為主，數位內容為特色，重點教研領域包括雲端運算、人工智慧、資料探勘、行動運算/商務、多媒體技術等，教育目標為培育資訊應用、網路技術及資料庫管理人才，以及培育具備數位內容第二專長之人才。每位專任教師均具有博士學位，學有專精且教學認真，研究成果豐碩，學生屢屢於全國性競賽中獲獎，系友遍佈於國內各大企業。",
-                    career: `MIS程式設計師
-規劃MIS系統運作之架構，決定系統引用之主要技術，確定系統之規格要求。設定系統發展條件、發展方式及分工協調原則，並撰寫系統設計使用說明規範、設計測試資料及驗收程式。
+                    name: "醫療資訊學系",
+                    code: "012172",
+                    status: "passed",
+                    schedule: {
+                        date: "05/23 ~ 05/24",
+                        location: "英才校區 互助大樓7樓 醫療資訊學系",
+                        payment: "04/01上午09:00～04/14下午03:30",
+                        docs: "4/30～5/6",
+                        fee: "1100元",
+                        note: "選擇面談梯次時間：04/03下午03:00～04/14下午04:00"
+                    },
+                    website: "https://dbmi.cmu.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=012018",
+                    feature: "中國醫藥大學醫療資訊學系特色為國內中部擁有醫療大健康的基礎師資與附設醫院醫學中心等級臨床資源的學系。本系師資結合了校內醫療資訊基礎教師、數位轉型辦公室與附醫大數據中心、醫療人工智慧中心等臨床主治醫師/教授/工程師。",
+                    career: `數據分析師
+從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。
 
-系統分析師
-透過分析使用者需求，了解存在的問題以及需要執行的任務，負責定義使用介面、程式編碼、切割功能模組以及系統規劃與分析，然後根據公司或客戶的目標建立適合的資訊系統。
+人工智慧工程師
+運用人工智慧等資訊技術輔助分析、優化、研發、製造等，協助企業解決問題，提出合理的決策方案或策略規劃。
 
-軟體專案主管
-從事軟體工程的規劃、主導、協調與電腦系統、軟體相關之專案管理工作。
+演算法開發工程師
+從事演算法的研究、分析、構建並設計或修改相關軟體等工作。
 
-電子商務技術主管
-負責商務流程電子化的規劃、設計、建議，與相關的資料處理、資訊系統、系統分析等事務，並管理部門日常活動。
-
-數據分析師
-從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。`,
-                    A: `從修課紀錄中了解申請者學習歷程的整體表現。
+數據工程師
+使用程式語言建構資料串流、處理非結構式資料儲存、串接、提取、介接其他大數據平台，並使用特定統計方式整理、呈現資料分布與屬性，甚至是大數據模型的建置 ，應用數據協助企業組織規劃、導入、管理、執行與追蹤經營方案。`,
+                    A: `■審查重點
+1. 高中(職)在校成績。
+2. 數學領域、自然科學領域或科技領域等課程成績。
 
 ■準備指引
-提供完整的修課紀錄。`,
-                    B: `■審查重點
-提供至多3件書面報告。
+考生若為當學年度各高級中等學校應屆畢業生，第一至第五學期修課紀錄由高中學習歷程資料庫提供，第六學期修課紀錄則由其就讀學校上傳至甄選委員會。`,
+                    B: ``,
+                    C: `■審查重點
+1. 實作作品之呈現
+2. 客觀之自我評價及參考依據
 
 ■準備指引
-可勾選足以展現個人能力或是與本系專業有關的書面報告。`,
-                    C: ``,
-                    D: ``,
+請提供參與課程之學習成果。`,
+                    D: `■審查重點
+1. 問題描述與分析
+2. 解決問題之方法
+3. 成果作品之呈現
+
+■準備指引
+自然科學領域探究與實作，或特殊類型班級之相關課程學習成果。`,
                     E: ``,
                     F: `■審查重點
-提供至多10件成果，並撰寫多元表現綜整心得。
+1. 內容陳述用心程度 
+2. 知識深度、廣度與反思
 
 ■準備指引
-根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
-1. 在這些活動中你所扮演的角色。
-2. 這些經歷帶給你的心得。`,
-                    G: ``,
+高中自主學習計畫與成果。`,
+                    G: `■審查重點
+1. 個人特質與領導能力 
+2. 組織與團體合作能力
+
+■準備指引
+校內外社團活動，包含校級有組織之團體經驗。`,
                     H: ``,
                     I: ``,
-                    J: ``,
+                    J: `■審查重點
+1. 競賽表現之成績 
+2. 與生物醫療資訊、健康大數據或數理資訊領域的相關性
+
+■準備指引
+競賽表現傑出之具體事蹟(例如：獎狀、獎盃、錦旗、成績證明)。`,
                     K: ``,
                     L: ``,
-                    M: `■審查重點
-提供至多10件成果，並撰寫多元表現綜整心得。
-
-■準備指引
-根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
-1. 在這些活動中你所扮演的角色。
-2. 這些經歷帶給你的心得。`,
+                    M: ``,
                     N: `■審查重點
-提供至多10件成果，並撰寫多元表現綜整心得。
+1. 邏輯組織架構之能力
+2. 內容陳述用心程度
+3. 與本系宗旨相關性
+4. 個人特質
 
 ■準備指引
-根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
-1. 在這些活動中你所扮演的角色。
-2. 這些經歷帶給你的心得。`,
+彙整高中自主學習計畫與成果之多元表現心得一份。`,
                     O: ``,
-                    P: ``,
-                    Q: ``,
-                    R: `https://imweb.ncue.edu.tw/var/file/44/1044/img/1122/287778469.pdf`,
+                    P: `■審查重點
+1. 文字表達能力 
+2. 與本系宗旨關聯性
+
+■準備指引
+詳述個人特質、學習經歷與學習動機之關連。`,
+                    Q: `■審查重點
+1. 計劃合理可執行 
+2. 與本系課程之關連 
+3. 對相關產業與社會動態之關注
+
+■準備指引
+短、中、長期學習計劃與生涯規劃。`,
+                    R: `https://adm21.cmu.edu.tw/sites/default/115/11517.pdf`,
                     S: ``,
                     T: ``,
-                    interviewDate: `2026/5/23(六)`,
+                    interviewDate: `2026/5/23(六)~2026/5/24(日)`,
                     interviewGuide: ``,
                     seniorLinks: []
                 }]
@@ -645,8 +451,19 @@
                 departments: [{
                     name: "企業管理學系",
                     code: "027232",
+                    status: "passed",
+                    schedule: {
+                        date: "無 (純書審)",
+                        location: "無",
+                        payment: "04/28中午12:00～05/04下午05:00",
+                        docs: "4/30～5/4",
+                        fee: "800元",
+                        note: "*將於4月2日以郵局掛號寄送通過第一階段篩選通知單"
+                    },
                     website: "https://bm.nsysu.edu.tw/",
                     collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=027015",
+                    feature: "西灣管院優勢，強調國際化與實務接軌，培育具前瞻思維的領導人才。",
+                    career: "企業管理、行銷企劃、人力資源、金融理財、創業者。",
                     feature: `(1) 「全國最多」的國際交換計畫，致力於培養具備創新力、執行力和國際競爭力的商管人才。
 (2) 連續四次獲得「AACSB全球管理教育品質」的認證，蟬聯2019英國金融時報全球管理學碩士榜，全台唯一。
 (3) 課程理論與實務兼備，擁有多國籍的優良師資。
@@ -851,10 +668,108 @@
                     seniorLinks: []
                 }]
             },
+            "國立彰化師範大學": {
+                departments: [{
+                    name: "資訊管理學系資訊管理組",
+                    code: "023202",
+                    status: "passed",
+                    schedule: {
+                        date: "2026-05-23",
+                        location: "經世館 師大校區",
+                        payment: "04/01上午09:00～05/05下午05:00",
+                        docs: "4/30～5/5",
+                        fee: "1000元",
+                        note: ""
+                    },
+                    website: "https://imweb.ncue.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=023018",
+                    feature: "本系成立於民國 89 年 8 月，是一個充滿朝氣與活力的學系，課程規劃以資訊管理為主，數位內容為特色，重點教研領域包括雲端運算、人工智慧、資料探勘、行動運算/商務、多媒體技術等，教育目標為培育資訊應用、網路技術及資料庫管理人才，以及培育具備數位內容第二專長之人才。每位專任教師均具有博士學位，學有專精且教學認真，研究成果豐碩，學生屢屢於全國性競賽中獲獎，系友遍佈於國內各大企業。",
+                    career: `MIS程式設計師
+規劃MIS系統運作之架構，決定系統引用之主要技術，確定系統之規格要求。設定系統發展條件、發展方式及分工協調原則，並撰寫系統設計使用說明規範、設計測試資料及驗收程式。
+
+系統分析師
+透過分析使用者需求，了解存在的問題以及需要執行的任務，負責定義使用介面、程式編碼、切割功能模組以及系統規劃與分析，然後根據公司或客戶的目標建立適合的資訊系統。
+
+軟體專案主管
+從事軟體工程的規劃、主導、協調與電腦系統、軟體相關之專案管理工作。
+
+電子商務技術主管
+負責商務流程電子化的規劃、設計、建議，與相關的資料處理、資訊系統、系統分析等事務，並管理部門日常活動。
+
+數據分析師
+從事大量數據的搜集、整理、分析，並依據數據資料進行評估和預測的人員。運用資訊技術輔助分析，協助企業發展、解決問題、決策分析或策略規劃。`,
+                    A: `從修課紀錄中了解申請者學習歷程的整體表現。
+
+■準備指引
+提供完整的修課紀錄。`,
+                    B: `■審查重點
+提供至多3件書面報告。
+
+■準備指引
+可勾選足以展現個人能力或是與本系專業有關的書面報告。`,
+                    C: ``,
+                    D: ``,
+                    E: ``,
+                    F: `■審查重點
+提供至多10件成果，並撰寫多元表現綜整心得。
+
+■準備指引
+根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
+1. 在這些活動中你所扮演的角色。
+2. 這些經歷帶給你的心得。`,
+                    G: ``,
+                    H: ``,
+                    I: ``,
+                    J: ``,
+                    K: ``,
+                    L: ``,
+                    M: `■審查重點
+提供至多10件成果，並撰寫多元表現綜整心得。
+
+■準備指引
+根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
+1. 在這些活動中你所扮演的角色。
+2. 這些經歷帶給你的心得。`,
+                    N: `■審查重點
+提供至多10件成果，並撰寫多元表現綜整心得。
+
+■準備指引
+根據所提供的文件，在多元表現綜整心得中，就以下幾個面向進行闡述：
+1. 在這些活動中你所扮演的角色。
+2. 這些經歷帶給你的心得。`,
+                    O: ``,
+                    P: ``,
+                    Q: ``,
+                    R: `https://imweb.ncue.edu.tw/var/file/44/1044/img/1122/287778469.pdf`,
+                    S: ``,
+                    T: ``,
+                    interviewDate: `2026/5/23(六)`,
+                    interviewGuide: ``,
+                    seniorLinks: []
+                }]
+            },
+            "高雄醫學大學": {
+                departments: [{
+                    name: "醫務管理暨醫療資訊學系",
+                    code: "007152",
+                    status: "failed",
+                    website: "https://hami.kmu.edu.tw/",
+                    collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=007015",
+                    feature: "結合AI與醫療管理，培育智慧醫療人才。",
+                    career: "醫學工程師、數據分析師、醫院行政。",
+                    A: "學業總成績、數學成績。", B: "課程學習成果。", C: "", D: "", E: "",
+                    F: "自主學習計畫。", G: "社團與服務。", H: "", I: "", J: "", K: "", L: "", M: "",
+                    N: "綜整心得。", O: "反思。", P: "動機。", Q: "規劃。",
+                    R: "", S: "", T: "",
+                    interviewDate: "未通過不顯示",
+                    interviewGuide: ""
+                }]
+            },
             "國立中興大學": {
                 departments: [{
                     name: "智慧創意工程學士學位學程",
                     code: "003242",
+                    status: "failed",
                     website: "https://upice.nchu.edu.tw/",
                     collego: "https://collego.edu.tw/Highschool/DepartmentIntro?dept_id=003050",
                     feature: "智慧創意工程學士學位學程設立於 110 學年度, 為呼應政府前瞻計畫推動｢人工智慧｣產業應用之重點,並因應中部為我國智慧機械與光電製造重鎮之發展,整合院內系所專長,規劃｢智慧材料｣、｢智慧製造｣與｢智慧城鄉｣三大專業領域之學習課程，培養新世代具備整合人工智慧與工程技術之智慧創意人才。",
@@ -943,7 +858,9 @@
         const resultDisplay = document.getElementById('resultDisplay');
         const placeholder = document.getElementById('placeholder');
         const displayTitle = document.getElementById('displayTitle');
+        const statusBadge = document.getElementById('statusBadge');
 
+        // 初始化大學選單
         Object.keys(universityData).forEach(uni => {
             const opt = document.createElement('option');
             opt.value = uni; opt.textContent = uni;
@@ -957,7 +874,8 @@
                 deptSelect.disabled = false;
                 universityData[uniName].departments.forEach(dept => {
                     const opt = document.createElement('option');
-                    opt.value = dept.name; opt.textContent = dept.name;
+                    opt.value = dept.name; 
+                    opt.textContent = `${dept.name} ${dept.status === 'passed' ? '(通過)' : '(未通過)'}`;
                     deptSelect.appendChild(opt);
                 });
             } else {
@@ -980,8 +898,35 @@
             placeholder.classList.add('hidden');
             resultDisplay.classList.remove('hidden');
             displayTitle.textContent = `${uni} - ${data.name}`;
+            
+            // 處理狀態標籤
+            if (data.status === 'passed') {
+                statusBadge.textContent = "【第一階段通過】";
+                statusBadge.className = "mt-1 font-bold text-sm text-blue-600";
+                
+                // 顯示二階日程
+                document.getElementById('scheduleSection').classList.remove('hidden');
+                document.getElementById('schedule_content').innerHTML = `
+                    <div class="space-y-1">
+                        <p><strong>🗓️ 面試日期：</strong><span class="text-blue-700 font-bold">${data.schedule.date}</span></p>
+                        <p><strong>📍 面試地點：</strong>${data.schedule.location}</p>
+                        <p><strong>💰 甄試費用：</strong>${data.schedule.fee}</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p><strong>⏳ 繳費期限：</strong>${data.schedule.payment}</p>
+                        <p><strong>📁 資料上傳：</strong>${data.schedule.docs}</p>
+                        <p class="text-xs text-amber-600 font-medium whitespace-pre-line">${data.schedule.note}</p>
+                    </div>
+                `;
+            } else {
+                statusBadge.textContent = "【第一階段未通過】";
+                statusBadge.className = "mt-1 font-bold text-sm text-red-600";
+                document.getElementById('scheduleSection').classList.add('hidden');
+            }
+
             switchTab('tab-info');
 
+            // 渲染基本資料
             document.getElementById('info_basic').innerHTML = `
                 <p><strong>校系代碼：</strong>${data.code || '---'}</p>
                 <p><strong>學系官網：</strong>${data.website ? `<a href="${data.website}" target="_blank" class="info-link">點此前往</a>` : '---'}</p>
@@ -990,48 +935,77 @@
             document.getElementById('info_feature').textContent = data.feature || '暫無資料';
             document.getElementById('info_career').textContent = data.career || '暫無資料';
 
-const formatItem = (label, value) => {
+            // 渲染學習歷程區
+            const formatItem = (label, value) => {
                 let content = value || '<span class="text-slate-300 text-xs italic">未特別要求 / 待填寫</span>';
-                
-                // 自動偵測：如果內容是以 http 開頭的網址
-                const isUrl = value && value.trim().startsWith('http');
-
-                if (isUrl) {
-                    content = `
-                    <a href="${value.trim()}" target="_blank" class="pdf-btn shadow-sm hover:shadow-md transition-all">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                        點此開啟連結 / 檔案
-                    </a>`;
-                }
-
                 return `
-                <div class="flex flex-col mb-3">
+                <div class="flex flex-col mb-2">
                     <span class="font-bold text-slate-700">${label}</span>
-                    <div class="p-2 bg-slate-50 border-l-4 border-slate-300 min-h-[1.5rem] ${isUrl ? '' : 'whitespace-pre-line'} text-slate-600">${content}</div>
+                    <div class="p-2 bg-slate-50 border-l-4 border-slate-300 whitespace-pre-line text-slate-600">${content}</div>
                 </div>`;
             };
 
             document.getElementById('cat1').innerHTML = formatItem('A. 修課紀錄', data.A);
-            document.getElementById('cat2').innerHTML = formatItem('B. 書面報告', data.B) + formatItem('C. 實作作品', data.C) + formatItem('D.自然科學領域探究與實作成果', data.D) + formatItem('E.社會領域探究活動成果', data.E);
-            document.getElementById('cat3').innerHTML = formatItem('F. 高中自主學習計畫', data.F) + formatItem('G. 社團活動', data.G) + formatItem('H. 擔任幹部經驗', data.H) + formatItem('I. 服務學習經驗', data.I) + formatItem('J. 競賽表現', data.J) + formatItem('K. 非修課紀錄之成果作品', data.K) + formatItem('L. 檢定證照', data.L) + formatItem('M. 特殊優良表現證明', data.M) + formatItem('N. 多元表現綜整心得', data.N);
-            document.getElementById('cat4').innerHTML = formatItem('O. 學習歷程反思', data.O) + formatItem('P. 就讀動機', data.P) + formatItem('Q. 未來規劃', data.Q);
-            document.getElementById('cat5').innerHTML = formatItem('R. 其他', data.R) + formatItem('S. 其他', data.S) + formatItem('T. 其他', data.T);
-            document.getElementById('interview_date_display').innerHTML = formatItem('面試日期', data.interviewDate);
-            document.getElementById('interview_guide_display').innerHTML = formatItem('面試準備指引', data.interviewGuide, true);
+            document.getElementById('cat2').innerHTML = formatItem('B. 書面報告', data.B) + formatItem('C. 實作作品', data.C);
+            document.getElementById('cat3').innerHTML = formatItem('F. 高中自主學習', data.F) + formatItem('G. 社團活動', data.G) + formatItem('N. 多元表現綜整', data.N);
+            document.getElementById('cat4').innerHTML = formatItem('O. 學習反思', data.O) + formatItem('P. 就讀動機', data.P) + formatItem('Q. 未來規劃', data.Q);
+// --- 1. 更新 其他資料區 (cat5) 並加入網址偵測 ---
+            const otherFields = [
+                { label: '其他資料(R)', value: data.R },
+                { label: '其他資料(S)', value: data.S },
+                { label: '其他資料(T)', value: data.T }
+            ];
 
+            document.getElementById('cat5').innerHTML = otherFields.map(item => {
+                if (!item.value || item.value.trim() === "") return ""; // 沒資料不顯示
+                
+                const isUrl = item.value.trim().startsWith('http');
+                const displayContent = isUrl 
+                    ? `<a href="${item.value.trim()}" target="_blank" class="pdf-btn w-full justify-center mt-2 shadow-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        查看參考文件 (PDF/網頁)
+                       </a>`
+                    : `<div class="whitespace-pre-line text-slate-600">${item.value}</div>`;
+
+                return `
+                    <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 mb-2">
+                        <span class="block font-bold text-slate-700 mb-2">${item.label}</span>
+                        ${displayContent}
+                    </div>`;
+            }).join('');
+
+            // --- 2. 渲染面試區 (日期與指引) ---
+            document.getElementById('interview_date_display').innerHTML = formatItem('面試日期 (簡章資料)', data.interviewDate);
+            
+            const interviewGuideEl = document.getElementById('interview_guide_display');
+            if (data.interviewGuide && data.interviewGuide.startsWith('http')) {
+                interviewGuideEl.innerHTML = `
+                    <a href="${data.interviewGuide}" target="_blank" class="pdf-btn w-full justify-center shadow-md">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        點此查看官方面試準備指引
+                    </a>`;
+            } else {
+                interviewGuideEl.innerHTML = data.interviewGuide ? 
+                    `<div class="p-3 bg-blue-50 border border-blue-100 rounded text-blue-800 text-sm">${data.interviewGuide}</div>` : 
+                    '<p class="text-slate-400 italic text-sm">暫無面試指引檔案</p>';
+            }
+
+            // --- 3. 處理學長姐分享 (seniorLinks) ---
             const seniorDisplay = document.getElementById('senior_links_display');
             if (data.seniorLinks && data.seniorLinks.length > 0) {
                 seniorDisplay.innerHTML = data.seniorLinks.map(link => `
-                    <a href="${link.url}" target="_blank" class="flex items-center justify-between p-3 bg-white border border-amber-100 rounded-lg hover:shadow-md transition text-slate-700">
-                        <span class="font-medium">${link.title}</span>
-                        <span class="text-blue-600 flex items-center gap-1">點此查看 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></span>
+                    <a href="${link.url}" target="_blank" class="flex items-center justify-between p-3 bg-white border border-amber-100 rounded-lg hover:shadow-md transition text-slate-700 mb-2">
+                        <span class="font-medium text-sm">${link.title}</span>
+                        <span class="text-blue-600 text-xs flex items-center gap-1 shrink-0 ml-2">點此查看 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></span>
                     </a>
                 `).join('');
             } else {
-                seniorDisplay.innerHTML = '<p class="text-amber-600 italic">目前尚無學長姐分享資料，歡迎點擊右下角按鈕提供！</p>';
+                seniorDisplay.innerHTML = '<p class="text-amber-600 italic text-sm text-center py-4">目前尚無學長姐分享資料</p>';
             }
+            document.getElementById('interview_date_display').innerHTML = formatItem('面試日期 (簡章資料)', data.interviewDate);
+            document.getElementById('interview_guide_display').innerHTML = data.interviewGuide ? 
+                `<a href="${data.interviewGuide}" target="_blank" class="pdf-btn">點此查看面試準備指引</a>` : 
+                '<p class="text-slate-400 italic text-sm">暫無面試指引檔案</p>';
         }
     </script>
 </body>
